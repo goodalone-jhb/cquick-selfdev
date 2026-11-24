@@ -1,8 +1,0 @@
-blank_issues_enabled: false
-contact_links:
-  - name: 先读文档
-    url: https://github.com/goodalone-jhb/cquick-selfdev/blob/main/docs/README.md
-    about: 环境搭建、协作流程、编码规范都在这里，很多问题文档里已有答案
-  - name: 直接找维护人
-    url: https://github.com/goodalone-jhb
-    about: 紧急问题（比赛前一天）直接联系维护人，不用等 Issue

@@ -18,7 +18,7 @@ from urllib.parse import unquote
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-SKIP_DIRS = {".git", "node_modules", ".venv", "venv", "__pycache__", "build", ".pio", "dist"}
+SKIP_DIRS = {".git", ".workbuddy", "node_modules", ".venv", "venv", "__pycache__", "build", ".pio", "dist"}
 
 LINK_RE = re.compile(r"\[[^\]]*\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\s*\)")
 FENCE_RE = re.compile(r"^\s*```")
