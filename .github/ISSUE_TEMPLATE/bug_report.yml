@@ -1,0 +1,62 @@
+name: 缺陷报告
+description: 板子、固件或算法出现异常时使用
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        报之前先搜一下已有 Issue，避免重复。描述得越具体，修得越快。
+  - type: textarea
+    id: phenomenon
+    attributes:
+      label: 现象
+      description: 实际发生了什么，预期是什么
+      placeholder: 上电后舵机持续向一侧顶死，串口无报错
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 从干净状态开始，一步步写清楚
+      placeholder: |
+        1. 烧录 v1.2 固件
+        2. 上电，等待 IMU 初始化完成
+        3. 将头部俯仰到 -30°
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: 硬件版本
+      placeholder: 主控板 v1.2 / 固件 commit 8a3f2c1
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: 已排除的可能
+      description: 你试过什么、排除了什么，避免别人重复你的路
+      placeholder: 已确认 3V3 正常（3.28V）、SWD 可连、换过一颗舵机现象不变
+    validations:
+      required: false
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 严重程度
+      options:
+        - 阻塞（无法继续开发/比赛）
+        - 严重（功能不可用，有绕过方案）
+        - 一般（体验受损）
+        - 轻微（不影响使用）
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志与截图
+      description: 串口日志、波形、实物照片，直接拖进来
+      render: text
+    validations:
+      required: false

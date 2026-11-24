@@ -1,0 +1,29 @@
+name: 文档检查
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - "tools/check_docs.py"
+      - ".github/workflows/docs-check.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "tools/check_docs.py"
+      - ".github/workflows/docs-check.yml"
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: 校验 Markdown 链接与格式
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 运行文档自检
+        run: python tools/check_docs.py
